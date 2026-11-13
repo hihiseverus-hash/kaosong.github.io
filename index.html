@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ก้าวสอง – รองเท้ามือสอง</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;700;800&family=Sarabun:wght@400;600&display=swap">
+<style>
+:root{--bg:#d9f0ff;--surface:#fff;--ink:#1a1a4b;--muted:#51527a;--red:#ff3b3b;--orange:#ff8a00;--yellow:#ffd400;--green:#19b84a;--blue:#1f6bff;--on-y:#1a1a4b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121537;--surface:#1f2352;--ink:#f4f5ff;--muted:#b4b7e6;--blue:#5c93ff}}
+:root[data-theme="dark"]{--bg:#121537;--surface:#1f2352;--ink:#f4f5ff;--muted:#b4b7e6;--blue:#5c93ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Sarabun,"Noto Sans Thai",sans-serif;overflow-x:hidden}
+h1,h2,h3,.brand,.pill{font-family:Prompt,Sarabun,sans-serif;margin:0;line-height:1.2}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.awning{height:22px;background:repeating-linear-gradient(90deg,var(--red) 0 36px,#fff 36px 72px);border-bottom:4px solid var(--ink)}
+header{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;max-width:1100px;margin:auto}
+.brand{font-size:1.7rem;font-weight:800;color:var(--red);text-shadow:2px 2px 0 var(--yellow)}
+.cartbtn{background:var(--yellow);color:var(--on-y);border:3px solid var(--ink);border-radius:999px;padding:6px 18px;font:700 1rem Prompt;box-shadow:3px 3px 0 var(--ink)}
+.hero{max-width:1100px;margin:auto;padding:24px 20px 28px;display:grid;gap:26px;grid-template-columns:1.2fr 1fr;align-items:center}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:800;color:var(--blue);text-shadow:3px 3px 0 var(--yellow)}
+.hero p{max-width:34ch;font-size:1.1rem;margin:16px 0 22px}
+.cta{display:inline-block;background:var(--orange);color:#fff;padding:12px 26px;border:3px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink);font:700 1.05rem Prompt;text-decoration:none}
+.sun{background:var(--yellow);border:4px solid var(--ink);border-radius:50%;aspect-ratio:1;display:grid;place-items:center;padding:14%;position:relative;max-width:420px;justify-self:center;width:100%}
+.sun svg{width:100%}
+.bal{position:absolute;width:44px;height:54px;border-radius:50%;border:3px solid var(--ink);animation:bob 3s ease-in-out infinite}
+.bal.b1{background:var(--red);left:-6px;top:10%}.bal.b2{background:var(--green);right:-4px;top:2%;animation-delay:.7s}.bal.b3{background:var(--blue);right:6%;bottom:2%;animation-delay:1.4s}
+@keyframes bob{50%{transform:translateY(-12px)}}
+.trust{max-width:1100px;margin:auto;padding:0 20px 8px;display:flex;flex-wrap:wrap;gap:10px}
+.trust span{background:var(--surface);border:2px solid var(--ink);border-radius:999px;padding:2px 14px;font-size:.95rem;font-weight:600}
+section.blk{max-width:1100px;margin:auto;padding:34px 20px}
+.pill{display:inline-block;font-size:1.5rem;font-weight:800;color:#fff;background:var(--blue);border:3px solid var(--ink);border-radius:14px;padding:4px 18px;box-shadow:4px 4px 0 var(--ink);margin-bottom:20px}
+.pill.o{background:var(--orange)}.pill.g{background:var(--green)}.pill.r{background:var(--red)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip,select,input,textarea{background:var(--surface);border:2px solid var(--ink);border-radius:999px;padding:5px 14px}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+input,textarea{border-radius:10px;width:100%;margin:2px 0}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(235px,1fr))}
+.card{background:var(--surface);border:3px solid var(--ink);border-radius:18px;box-shadow:5px 5px 0 var(--ink);overflow:hidden;display:flex;flex-direction:column}
+.pic{background:var(--c);padding:16px 20px;position:relative;border-bottom:3px solid var(--ink)}
+.pic svg,.pic img{width:100%;display:block}
+.pic img{aspect-ratio:4/3;object-fit:cover;margin:-16px -20px;width:calc(100% + 40px);max-width:none}
+.grade,.tag{position:absolute;top:10px;font:700 .85rem Prompt;padding:1px 10px;border-radius:8px;border:2px solid var(--ink);color:#fff}
+.grade{left:10px}.tag{right:10px;background:var(--blue)}
+.g-A{background:var(--green)}.g-B{background:var(--orange)}.g-C{background:var(--red)}
+.sold{position:absolute;inset:0;background:rgba(26,26,75,.7);color:#fff;display:grid;place-items:center;font:800 1.6rem Prompt}
+.info{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.info h3{font-size:1.05rem}.meta{color:var(--muted);font-size:.93rem}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}
+.price{font:800 1.35rem Prompt;color:var(--red)}
+.add{background:var(--green);color:#fff;border:2px solid var(--ink);border-radius:10px;padding:4px 14px;font-weight:600;box-shadow:2px 2px 0 var(--ink)}
+.add:disabled{background:#b9bbd6;color:var(--ink);box-shadow:none;cursor:default}
+.two{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.box{background:var(--surface);border:3px solid var(--ink);border-radius:18px;padding:18px;box-shadow:5px 5px 0 var(--ink)}
+.box p{margin:0 0 10px}.box h3{margin-bottom:6px}
+.stars{color:var(--orange);letter-spacing:2px}
+.bank{border-bottom:2px dashed var(--muted);padding:8px 0}.bank:last-child{border:0}
+.bank b{font:700 1.05rem Prompt}
+.btn{display:inline-block;border:3px solid var(--ink);border-radius:12px;padding:8px 18px;font:700 1rem Prompt;text-decoration:none;color:#fff;box-shadow:3px 3px 0 var(--ink);margin:0 8px 10px 0}
+.btn.line{background:#06c755}.btn.tt{background:var(--ink)}.btn.ig{background:var(--red)}
+footer{max-width:1100px;margin:auto;padding:30px 20px 90px;color:var(--muted);font-size:.95rem}
+aside{position:fixed;top:0;right:0;bottom:0;width:min(390px,100%);background:var(--surface);border-left:4px solid var(--ink);padding:calc(18px + env(safe-area-inset-top,0px)) 18px calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column;z-index:30}
+aside.open{transform:none}
+aside ul{list-style:none;padding:0;margin:10px 0;overflow:auto;flex:1}
+aside li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--muted)}
+aside li button,.x{background:none;border:0;text-decoration:underline;color:var(--muted)}
+.total{font:800 1.2rem Prompt;display:flex;justify-content:space-between;margin:6px 0}
+.close{align-self:flex-end;background:none;border:0;font-size:1.4rem}
+textarea{height:90px;border-radius:10px;font-size:.9rem}
+.admin{display:none;position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--ink);color:#fff;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));gap:8px;flex-wrap:wrap;align-items:center}
+.admin.on{display:flex}
+.admin button{border:2px solid #fff;background:var(--yellow);color:#1a1a4b;border-radius:10px;padding:4px 14px;font-weight:600}
+.admin button.p{background:var(--green);color:#fff}
+.edit-only{display:none}body.edit .edit-only{display:block}
+body.edit [data-t]{outline:2px dashed var(--orange);outline-offset:3px;cursor:text}
+.fld{font-size:.85rem}
+.msg{margin-left:auto;font-size:.9rem}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){aside{transition:none}.bal{animation:none}}
+</style>
+</head>
+<body>
+<div class="awning"></div>
+<header><div class="brand">ก้าวสอง</div><button class="cartbtn" id="open">ตะกร้า (<span id="count">0</span>)</button></header>
+
+<section class="hero">
+  <div>
+    <h1 data-t="heroTitle"></h1>
+    <p data-t="heroSub"></p>
+    <a class="cta" href="#shop" data-t="heroCta"></a>
+  </div>
+  <div class="sun" aria-hidden="true"><i class="bal b1"></i><i class="bal b2"></i><i class="bal b3"></i><svg viewBox="0 0 120 70"><use href="#shoe" style="--c:#1f6bff"/></svg></div>
+</section>
+<div class="trust"><span data-t="t1"></span><span data-t="t2"></span><span data-t="t3"></span><span data-t="t4"></span></div>
+
+<section class="blk" id="shop">
+  <h2 class="pill" data-t="shopTitle"></h2>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="blk">
+  <h2 class="pill o" data-t="aboutTitle"></h2>
+  <div class="two">
+    <div class="box"><p data-t="a1"></p><p data-t="a2"></p></div>
+    <div class="box"><h3 data-t="a3h"></h3><p data-t="a3"></p></div>
+  </div>
+  <div class="two" style="margin-top:20px">
+    <div class="box"><h3 style="color:var(--green)">เกรด A</h3><p data-t="gA"></p></div>
+    <div class="box"><h3 style="color:var(--orange)">เกรด B</h3><p data-t="gB"></p></div>
+    <div class="box"><h3 style="color:var(--red)">เกรด C</h3><p data-t="gC"></p></div>
+  </div>
+</section>
+
+<section class="blk">
+  <h2 class="pill g" data-t="revTitle"></h2>
+  <div class="two" id="reviews"></div>
+  <button class="chip edit-only" id="addRev">+ เพิ่มรีวิว</button>
+</section>
+
+<section class="blk" id="pay">
+  <h2 class="pill r" data-t="payTitle"></h2>
+  <div class="two">
+    <div class="box"><div id="banks"></div><button class="chip edit-only" id="addBank">+ เพิ่มบัญชี</button></div>
+    <div class="box"><p data-t="payNote"></p></div>
+  </div>
+</section>
+
+<section class="blk" id="contact">
+  <h2 class="pill" data-t="contactTitle"></h2>
+  <div class="box">
+    <p data-t="contactNote"></p>
+    <div id="links"></div>
+    <div class="edit-only fld">
+      <label>ลิงก์ TikTok <input data-s="tiktok" placeholder="https://www.tiktok.com/@..."></label>
+      <label>ลิงก์ Instagram <input data-s="ig" placeholder="https://www.instagram.com/..."></label>
+    </div>
+  </div>
+</section>
+<footer data-t="footer"></footer>
+
+<aside id="cart" aria-label="ตะกร้าสินค้า">
+  <button class="close" id="close" aria-label="ปิดตะกร้า">✕</button>
+  <h2 class="pill">ตะกร้าของคุณ</h2>
+  <ul id="items"></ul>
+  <div class="total"><span>รวม</span><span id="sum">฿0</span></div>
+  <textarea id="ordertxt" readonly aria-label="ข้อความสั่งซื้อ"></textarea>
+  <p class="fld" style="margin:6px 0">กดคัดลอกข้อความนี้ แล้ววางในแชต LINE ของร้านได้เลย</p>
+  <button class="btn tt" id="copy" style="width:100%;text-align:center">คัดลอกรายการสั่งซื้อ</button>
+  <a class="btn line" id="orderline" target="_blank" rel="noopener" style="text-align:center">เปิด LINE ร้าน</a>
+</aside>
+
+
+
+<svg width="0" height="0" style="position:absolute"><symbol id="shoe" viewBox="0 0 120 70">
+  <path d="M6 48V40q0-4 4-5l24-5q6-12 18-12l6 10q22 2 38 12 18 4 18 14v4H6z" fill="var(--c)" stroke="#1a1a4b" stroke-width="2.5"/>
+  <path d="M6 54h108v6q0 4-4 4H10q-4 0-4-4z" fill="#fff" stroke="#1a1a4b" stroke-width="2.5"/>
+  <path d="M42 24l8 8m0-14l8 10m0 0l8 6" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/>
+</symbol></svg>
+
+<script id="data" type="application/json">{"line":"Inthach_nk","tiktok":"","ig":"","texts":{"heroTitle":"รองเท้ามือสอง สีสันเต็มสวนสนุก","heroSub":"คัดรองเท้ามือสองสภาพดี ทั้งงานแท้และงานเทียบ บอกเกรดสภาพชัดเจนทุกคู่","heroCta":"ดูรองเท้าทั้งหมด","t1":"ถ่ายรูปตามสภาพจริง","t2":"ทำความสะอาดก่อนส่ง","t3":"ส่งทั่วประเทศ","t4":"คืนได้ใน 3 วัน ถ้าไม่ตรงปก","shopTitle":"รองเท้าพร้อมส่ง","aboutTitle":"เกี่ยวกับร้าน","a1":"ก้าวสองเป็นร้านรองเท้ามือสอง มีทั้งงานแท้และงานเทียบ ทุกคู่ระบุไว้ในหน้าสินค้าว่าเป็นแบบไหน","a2":"เป็นของมือสอง จึงอาจมีตำหนิบ้างตามสภาพการใช้งาน เราบอกเกรดและถ่ายรูปไว้ให้ดูก่อนสั่ง ขอลูกค้าที่รับได้และเข้าใจงานมือสอง","a3h":"เงื่อนไขการคืนสินค้า","a3":"ร้านไม่รับเปลี่ยนหรือคืนทุกกรณี เช่น เปลี่ยนใจหรือไซซ์ไม่พอดี แต่ถ้าสินค้าไม่ตรงปก คืนได้ภายใน 3 วันหลังได้รับของ","gA":"แทบเหมือนใหม่ ใส่มาไม่กี่ครั้ง","gB":"ใช้งานแล้วเล็กน้อย มีรอยตามการใช้","gC":"มีรอยชัดเจน ราคาถูกที่สุด","revTitle":"รีวิวจากลูกค้า","payTitle":"ช่องทางชำระเงิน","payNote":"โอนเงินแล้วส่งสลิปทาง LINE พร้อมชื่อและที่อยู่จัดส่ง ร้านจะแพ็คและส่งให้ภายใน 1-2 วันทำการ","contactTitle":"ติดต่อร้าน","contactNote":"สอบถามสภาพสินค้า ขอดูรูปเพิ่ม หรือสั่งซื้อ ทักมาทาง LINE ได้เลย","footer":"ก้าวสอง · รองเท้ามือสอง ทั้งงานแท้และงานเทียบ"},
+"products":[
+{"id":1,"n":"Nike Air Force 1","b":"Nike","s":42,"g":"A","t":"แท้","p":1290,"c":"#ffd400","img":"","sold":false},
+{"id":2,"n":"Adidas Samba OG","b":"Adidas","s":40,"g":"A","t":"แท้","p":1590,"c":"#19b84a","img":"","sold":false},
+{"id":3,"n":"Converse Chuck 70","b":"Converse","s":41,"g":"B","t":"เทียบ","p":890,"c":"#ff3b3b","img":"","sold":false},
+{"id":4,"n":"New Balance 550","b":"New Balance","s":43,"g":"A","t":"แท้","p":1890,"c":"#1f6bff","img":"","sold":false},
+{"id":5,"n":"Vans Old Skool","b":"Vans","s":42,"g":"B","t":"เทียบ","p":690,"c":"#ff8a00","img":"","sold":false},
+{"id":6,"n":"Asics Gel-Kayano","b":"Asics","s":44,"g":"B","t":"แท้","p":1490,"c":"#19b8b0","img":"","sold":false}],
+"reviews":[
+{"id":1,"n":"คุณเอ","t":"ได้ของตรงปก ตำหนิตามที่บอกไว้ ใส่สบาย แพ็คมาดีมาก","r":5},
+{"id":2,"n":"คุณบี","t":"ราคาโอเค คุยง่าย ตอบไวทางไลน์","r":5},
+{"id":3,"n":"คุณซี","t":"สภาพดีกว่าที่คิด จะมาอุดหนุนอีกแน่นอน","r":4}],
+"banks":[{"id":1,"bank":"ธนาคาร (แก้ไขได้)","no":"000-0-00000-0","name":"ชื่อบัญชี"}]}</script>
+
+<script>
+const SRC="<!DOCTYPE html>\n"+document.documentElement.outerHTML;
+let S=JSON.parse(document.getElementById("data").textContent),E=false,brand="ทั้งหมด",cart=[],art=null,assets=null;
+const $=id=>document.getElementById(id),baht=n=>"฿"+(+n||0).toLocaleString("en-US"),
+esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])),
+lineUrl=()=>"https://line.me/ti/p/~"+encodeURIComponent(S.line);
+function build(){const j=JSON.stringify(S).replace(/</g,"\\u003c"),a="<"+'script id="data" type="application/json">',i=SRC.indexOf(a)+a.length,k=SRC.indexOf("</"+"script>",i);return SRC.slice(0,i)+j+SRC.slice(k)}
+function texts(){document.querySelectorAll("[data-t]").forEach(e=>{e.textContent=S.texts[e.dataset.t]??"";e.contentEditable=E?"plaintext-only":"false"})}
+function shoeSvg(p){return p.img?`<img src="${esc(p.img)}" alt="${esc(p.n)}">`:`<svg viewBox="0 0 120 70" role="img" aria-label="${esc(p.n)}"><use href="#shoe"/></svg>`}
+function grid(){
+  const brands=["ทั้งหมด",...new Set(S.products.map(x=>x.b).filter(Boolean))],sz=+($("size")?.value||0);
+  if(!brands.includes(brand))brand="ทั้งหมด";
+  $("filters").innerHTML=brands.map(b=>`<button class="chip" aria-pressed="${b===brand}" data-b="${esc(b)}">${esc(b)}</button>`).join("")+
+   `<select id="size" aria-label="เลือกไซซ์"><option value="0">ทุกไซซ์</option>${[...new Set(S.products.map(x=>+x.s))].sort((a,b)=>a-b).map(s=>`<option ${s===sz?"selected":""}>${s}</option>`).join("")}</select>`;
+  const list=S.products.filter(x=>(brand==="ทั้งหมด"||x.b===brand)&&(!sz||+x.s===sz));
+  $("grid").innerHTML=list.length?list.map(x=>{const inC=cart.includes(x.id);
+   const head=`<div class="pic" style="--c:${esc(x.c)}">${shoeSvg(x)}<span class="grade g-${esc(x.g)}">เกรด ${esc(x.g)}</span><span class="tag">${esc(x.t)}</span>${x.sold?'<div class="sold">ขายแล้ว</div>':""}</div>`;
+   if(E)return `<article class="card" data-id="${x.id}">${head}<div class="info fld">
+    <label class="edit-only" style="display:block">รูปสินค้า <input type="file" accept="image/*" data-up="${x.id}"></label>
+    <input data-f="n" value="${esc(x.n)}" aria-label="ชื่อ"><input data-f="b" value="${esc(x.b)}" aria-label="แบรนด์" placeholder="แบรนด์">
+    <input data-f="p" type="number" value="${esc(x.p)}" aria-label="ราคา"><input data-f="s" type="number" value="${esc(x.s)}" aria-label="ไซซ์">
+    <select data-f="g" data-r="1">${"ABC".split("").map(g=>`<option ${g===x.g?"selected":""}>${g}</option>`).join("")}</select>
+    <select data-f="t" data-r="1">${["แท้","เทียบ"].map(g=>`<option ${g===x.t?"selected":""}>${g}</option>`).join("")}</select>
+    <label><input type="checkbox" data-f="sold" data-r="1" ${x.sold?"checked":""} style="width:auto"> ขายแล้ว</label>
+    <label>สีพื้นหลัง <input type="color" data-f="c" value="${esc(x.c)}"></label>
+    <button class="x" data-del="${x.id}">ลบรองเท้าคู่นี้</button></div></article>`;
+   return `<article class="card">${head}<div class="info"><h3>${esc(x.n)}</h3><div class="meta">${esc(x.b)} · ไซซ์ ${esc(x.s)} · มือสอง ${esc(x.t)}</div>
+    <div class="row"><span class="price">${baht(x.p)}</span><button class="add" data-id="${x.id}" ${inC||x.sold?"disabled":""}>${x.sold?"ขายแล้ว":inC?"อยู่ในตะกร้า":"ใส่ตะกร้า"}</button></div></div></article>`}).join(""):`<p>ไม่มีรองเท้าตามตัวกรองนี้ ลองเปลี่ยนแบรนด์หรือไซซ์</p>`}
+function rest(){
+  $("reviews").innerHTML=S.reviews.map(r=>E?`<div class="box fld" data-rid="${r.id}"><input data-rf="n" value="${esc(r.n)}"><textarea data-rf="t">${esc(r.t)}</textarea><input data-rf="r" type="number" min="1" max="5" value="${r.r}"><button class="x" data-rdel="${r.id}">ลบรีวิว</button></div>`:
+   `<div class="box"><div class="stars" aria-label="${r.r} ดาว">${"★".repeat(r.r)}${"☆".repeat(5-r.r)}</div><p>${esc(r.t)}</p><b>${esc(r.n)}</b></div>`).join("");
+  $("banks").innerHTML=S.banks.map(b=>E?`<div class="bank fld" data-bid="${b.id}"><input data-bf="bank" value="${esc(b.bank)}"><input data-bf="no" value="${esc(b.no)}"><input data-bf="name" value="${esc(b.name)}"><button class="x" data-bdel="${b.id}">ลบบัญชี</button></div>`:
+   `<div class="bank"><b>${esc(b.bank)}</b><br>เลขบัญชี ${esc(b.no)}<br>ชื่อบัญชี ${esc(b.name)}</div>`).join("");
+  $("links").innerHTML=`<a class="btn line" href="${lineUrl()}" target="_blank" rel="noopener">LINE: ${esc(S.line)}</a>`+
+   (S.tiktok?`<a class="btn tt" href="${esc(S.tiktok)}" target="_blank" rel="noopener">TikTok</a>`:"")+(S.ig?`<a class="btn ig" href="${esc(S.ig)}" target="_blank" rel="noopener">Instagram</a>`:"");
+  document.querySelectorAll("[data-s]").forEach(i=>i.value=S[i.dataset.s]||"");
+  $("orderline").href=lineUrl();
+}
+function cartUI(){
+  const rows=cart.map(id=>S.products.find(x=>x.id===id)).filter(Boolean);
+  $("count").textContent=rows.length;
+  $("items").innerHTML=rows.length?rows.map(x=>`<li><span>${esc(x.n)} (ไซซ์ ${esc(x.s)})<br>${baht(x.p)}</span><button data-rm="${x.id}">ลบ</button></li>`).join(""):`<li>ยังไม่มีสินค้า เลือกรองเท้าที่ชอบได้เลย</li>`;
+  const sum=rows.reduce((a,x)=>a+(+x.p||0),0);$("sum").textContent=baht(sum);
+  $("ordertxt").value=rows.length?"สนใจสั่งซื้อ\n"+rows.map(x=>`- ${x.n} ไซซ์ ${x.s} ${baht(x.p)}`).join("\n")+"\nรวม "+baht(sum):"";
+}
+function all(){texts();grid();rest();cartUI();document.body.classList.toggle("edit",E);
+  }
+const find=(a,id)=>a.find(x=>x.id==id);
+document.addEventListener("input",e=>{const t=e.target,d=t.dataset;
+  if(d.t){S.texts[d.t]=t.textContent;return}
+  if(d.s){S[d.s]=t.value;return}
+  const c=t.closest("[data-id]");
+  if(d.f&&c){const p=find(S.products,c.dataset.id);p[d.f]=t.type==="checkbox"?t.checked:["p","s"].includes(d.f)?+t.value:t.value;if(d.r)grid();return}
+  const r=t.closest("[data-rid]");if(d.rf&&r){find(S.reviews,r.dataset.rid)[d.rf]=d.rf==="r"?Math.min(5,Math.max(1,+t.value||5)):t.value;return}
+  const b=t.closest("[data-bid]");if(d.bf&&b)find(S.banks,b.dataset.bid)[d.bf]=t.value});
+document.addEventListener("change",async e=>{const t=e.target;
+  if(t.id==="size"){grid();return}
+  if(t.dataset.up){if(!assets)return say("อัปโหลดรูปไม่ได้ในตอนนี้");say("กำลังอัปโหลด...");
+    try{const r=await assets.upload(t.files[0]);find(S.products,t.dataset.up).img=r.id;say("อัปโหลดแล้ว อย่าลืมกดบันทึกและเผยแพร่");grid()}catch(x){say("อัปโหลดไม่สำเร็จ: "+(x.message||x.code||""))}}});
+document.addEventListener("click",e=>{const t=e.target,d=t.dataset;
+  if(d.b){brand=d.b;grid()}
+  else if(d.id&&t.classList.contains("add")){cart.push(+d.id);grid();cartUI();$("cart").classList.add("open")}
+  else if(d.rm){cart=cart.filter(x=>x!==+d.rm);grid();cartUI()}
+  else if(d.del&&confirm("ลบรองเท้าคู่นี้?")){S.products=S.products.filter(x=>x.id!=d.del);grid()}
+  else if(d.rdel){S.reviews=S.reviews.filter(x=>x.id!=d.rdel);rest()}
+  else if(d.bdel){S.banks=S.banks.filter(x=>x.id!=d.bdel);rest()}});
+$("open").onclick=()=>$("cart").classList.add("open");$("close").onclick=()=>$("cart").classList.remove("open");
+$("copy").onclick=async()=>{const v=$("ordertxt").value;if(!v)return;try{await navigator.clipboard.writeText(v);$("copy").textContent="คัดลอกแล้ว"}catch(x){$("ordertxt").select();$("copy").textContent="เลือกข้อความแล้ว กดคัดลอกเอง"}};
+$("addRev").onclick=()=>{S.reviews.push({id:Date.now(),n:"ชื่อลูกค้า",t:"ข้อความรีวิว",r:5});rest()};
+$("addBank").onclick=()=>{S.banks.push({id:Date.now(),bank:"ธนาคาร",no:"",name:""});rest()};
+if($("addProd"))$("addProd").onclick=()=>{S.products.unshift({id:Date.now(),n:"รองเท้าคู่ใหม่",b:"แบรนด์",s:40,g:"A",t:"แท้",p:0,c:"#ffd400",img:"",sold:false});grid()};
+function say(m){$("msg").textContent=m}
+if($("save"))$("save").onclick=async()=>{if(!art)return say("บันทึกไม่ได้ในตอนนี้");say("กำลังบันทึก...");
+  try{await art.publish(build())}catch(x){say(x.code==="conflict"?"มีการแก้ไขจากที่อื่น หน้าจะโหลดใหม่":"บันทึกไม่สำเร็จ: "+(x.message||x.code||""))}};
+all();
+
+</script>
+</body>
+</html>
